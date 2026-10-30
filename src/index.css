@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: #ffffff; color: #1f2328; }
+
+main { max-width: 40rem; margin: 0 auto; padding: 1rem; }
+main:focus-visible { outline: none; } /* main only gets focus from the skip link */
+
+h1 { margin-top: 0; font-size: 1.75rem; }
+
+/* Visible focus ring for every control */
+:focus-visible { outline: 3px solid #1a56db; outline-offset: 2px; }
+
+/* Skip link: hidden until it gets keyboard focus */
+.skip-link {
+  position: absolute; left: 0.5rem; top: 0.5rem; z-index: 10;
+  padding: 0.5rem 1rem; background: #1f2328; color: #ffffff;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+form label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.row input { flex: 1 1 12rem; min-width: 0; }
+
+input:not([type="checkbox"]) {
+  min-height: 2.75rem; padding: 0 0.75rem; font: inherit;
+  border: 2px solid #57606a; border-radius: 6px; background: #ffffff; color: #1f2328;
+}
+input[aria-invalid="true"] { border-color: #b42318; }
+
+input[type="checkbox"] { width: 1.5rem; height: 1.5rem; flex: none; }
+
+button {
+  min-height: 2.75rem; padding: 0 1rem; font: inherit; cursor: pointer;
+  border: 2px solid #1a56db; border-radius: 6px; background: #1a56db; color: #ffffff;
+}
+button.secondary { background: #ffffff; color: #1a56db; }
+button.danger { background: #b42318; border-color: #b42318; color: #ffffff; }
+button.danger-outline { background: #ffffff; border-color: #b42318; color: #b42318; }
+
+.error { color: #b42318; margin: 0.25rem 0 0; }
+.status { min-height: 1.5rem; color: #57606a; }
+
+ul { list-style: none; padding: 0; margin: 1rem 0; }
+li {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.5rem 0; border-bottom: 1px solid #d0d7de;
+}
+li label { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+li label.done { text-decoration: line-through; color: #57606a; }
+
+dialog {
+  max-width: calc(100vw - 2rem); padding: 1rem;
+  border: 2px solid #1f2328; border-radius: 8px;
+  background: #ffffff; color: #1f2328;
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+dialog h2 { margin-top: 0; font-size: 1.25rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
